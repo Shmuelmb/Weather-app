@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+/* .container-card {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.318);
+} */
+
+.save-to-fav {
+  fill: red;
+}
+
+.heart-icon {
+  user-select: none;
+  cursor: pointer;
+}
+.card {
+  color: #666;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 5px 30px;
+  width: 300px;
+  height: 320px;
+  background-color: #fff;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+  animation: open 1.5s cubic-bezier(0, 0, 0, 1);
+  overflow: hidden;
+}
+.header-card {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.header-card > img {
+  width: 10%;
+  height: min-content;
+  cursor: pointer;
+  fill: red;
+}
+
+.card h1 {
+  color: #666;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 0.2em;
+}
+
+.card h2 {
+  font-weight: 300;
+  font-size: 1.7rem;
+}
+
+.sky {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #03a9f4;
+}
+
+.temperature {
+  display: flex;
+  justify-content: space-between;
+}
+.sun {
+  position: relative;
+  top: -3px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #ffeb3b;
+}
+
+.cloud {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+}
+
+.cloud:before,
+.cloud:after {
+  position: absolute;
+  display: block;
+  content: "";
+}
+
+.cloud:before {
+  margin-left: -10px;
+  width: 51px;
+  height: 18px;
+  background: #fff;
+}
+
+.cloud:after {
+  position: absolute;
+  top: -10px;
+  left: -22px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 50px -6px 0 6px #fff, 25px -19px 0 10px #fff;
+}
+
+@keyframes open {
+  from {
+    padding: 0 30px;
+    height: 0;
+  }
+  to {
+    height: 320px;
+  }
+}
