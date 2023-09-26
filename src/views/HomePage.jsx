@@ -8,6 +8,7 @@ const HomePage = () => {
   const [forecast, setForecast] = useState(false);
   const [cityName, setCityName] = useState("Tel Aviv");
   const [currentWeather, setCurrentWeather] = useState(false);
+
   useEffect(() => {
     get5DailyForecasts("215854", setForecast);
     getCurrentWeather("215854", setCurrentWeather);
