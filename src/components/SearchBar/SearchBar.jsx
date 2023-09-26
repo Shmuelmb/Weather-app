@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./SearchBar.css";
-import { get5DailyForecasts } from "../../utils/api";
+import { get5DailyForecasts, getCurrentWeather } from "../../utils/api";
 import SearchField from "./SearchField/SearchField";
 import ListCities from "./ListCities/ListCities";
 import { useAutocomplete } from "../../hooks/useAutocomplete";
-const SearchBar = ({ setForecast, setCityName, setQuery, query }) => {
+import Modal from "../../views/Modal";
+const SearchBar = ({
+  setForecast,
+  setCityName,
+  setQuery,
+  query,
+  setCurrentWeather,
+}) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (e) => {
@@ -12,16 +19,13 @@ const SearchBar = ({ setForecast, setCityName, setQuery, query }) => {
     setQuery(e.target.value);
     setInputValue(e.target.value);
   };
-
   const handleClick = (key, cityName) => {
     get5DailyForecasts(key, setForecast);
+    getCurrentWeather(key, setCurrentWeather);
     setCityName(cityName);
     setQuery("");
   };
   const result = useAutocomplete(query);
-  // useEffect(() => {
-  //   autoComplete(query, setListCities);
-  // }, [query]);
 
   return (
     <div className="search-bar">
@@ -36,6 +40,9 @@ const SearchBar = ({ setForecast, setCityName, setQuery, query }) => {
         handleClick={handleClick}
         setCityName={setCityName}
       />
+      {result?.length < 1 ? (
+        <Modal content={"No result, please try again"} />
+      ) : null}
     </div>
   );
 };

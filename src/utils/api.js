@@ -23,7 +23,7 @@ export const get5DailyForecasts = async (cityKey, setState) => {
     const data = await req.json();
     const fiveDailyForecasts = data.DailyForecasts.map((day) => {
       return {
-        day_date: getDayOfWeek(day.Date).slice(0, 3),
+        day: getDayOfWeek(day.Date).slice(0, 3),
         day_temp: fahrenheitToCelsius(day.Temperature.Maximum.Value),
         night_temp: fahrenheitToCelsius(day.Temperature.Minimum.Value),
       };
@@ -34,20 +34,17 @@ export const get5DailyForecasts = async (cityKey, setState) => {
   }
 };
 
-// export const getForecast = async (cityKey, setState = undefined) => {
-//   try {
-//     const req = await fetch(
-//       `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${cityKey}?apikey=Sd1Yl9GxK3Q25O4Cbrna3uLdrbzdzGdy `
-//     );
-//     const data = await req.json();
-//     const day_temp = fahrenheitToCelsius(
-//       data.DailyForecasts[0].Temperature.Maximum.Value
-//     );
-//     const night_temp = fahrenheitToCelsius(
-//       data.DailyForecasts[0].Temperature.Minimum.Value
-//     );
-//     setState({ day_temp: day_temp, night_temp: night_temp });
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
+export const getCurrentWeather = async (cityKey, setState = undefined) => {
+  try {
+    const req = await fetch(
+      `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${API_KEY}`
+    );
+    const data = await req.json();
+    setState({
+      Temperature: data[0].Temperature.Metric.Value,
+      WeatherText: data[0].WeatherText,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

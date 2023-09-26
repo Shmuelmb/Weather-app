@@ -4,20 +4,23 @@ import FiveDaysForecasts from "./FiveDaysForecasts/FiveDaysForecasts";
 import { checkIsSave } from "../../utils/utilities";
 import { addItemToLocalStorage } from "../../utils/utilities";
 
-const ForecastCard = ({ forecast, cityName, query }) => {
+const ForecastCard = ({ forecast, cityName, query, currentWeather }) => {
   const [isSave, setIsSave] = useState(false);
 
   useEffect(() => {
     setIsSave(checkIsSave(cityName));
   }, [cityName]);
-
   return (
     <div className={query ? "none" : "card"}>
       <div className="header-card">
         <h2>{cityName}</h2>
         <svg
           onClick={() => {
-            addItemToLocalStorage({ cityName: cityName, forecast: forecast });
+            addItemToLocalStorage({
+              cityName: cityName,
+              forecast: forecast,
+              currentWeather: currentWeather,
+            });
             setIsSave(checkIsSave(cityName));
           }}
           className={isSave ? "save-to-fav heart-icon" : "heart-icon "}
@@ -42,8 +45,12 @@ const ForecastCard = ({ forecast, cityName, query }) => {
             <div className="circle-medium"></div>
           </div>
         </div>
-        <h1>{`${forecast[0].day_temp}° `}</h1>
+        <div>
+          <h1>{`${currentWeather.Temperature}° `}</h1>
+          <p> {`${currentWeather.WeatherText}`}</p>
+        </div>
       </div>
+
       <FiveDaysForecasts forecast={forecast} />
     </div>
   );

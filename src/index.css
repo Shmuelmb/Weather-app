@@ -2,6 +2,12 @@
   --main-color: hsl(215, 100%, 50%);
 }
 
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 * {
   box-sizing: border-box;
 }

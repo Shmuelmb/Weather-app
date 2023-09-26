@@ -17,6 +17,7 @@ const FavoritesPage = () => {
               setFavCities(JSON.parse(localStorage.getItem("favorites-cities")))
             }>
             <ForecastCard
+              currentWeather={city.currentWeather}
               forecast={city.forecast}
               cityName={city.cityName}
               query={""}

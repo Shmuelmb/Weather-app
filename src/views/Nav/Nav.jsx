@@ -18,8 +18,10 @@ const Nav = () => {
       </div>
 
       <div className="nav-links">
-        <a onClick={() => navigate("/")}>Main</a>
-        <a onClick={() => navigate("/favorites")}>Favorites</a>
+        <label htmlFor="nav-check">
+          <a onClick={() => navigate("/")}>Main</a>
+          <a onClick={() => navigate("/favorites")}>Favorites</a>
+        </label>
       </div>
     </nav>
   );

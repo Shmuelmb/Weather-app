@@ -11,7 +11,6 @@ function hasDuplicate(list, newItem) {
 export const checkIsSave = (item) => {
   const existingListJSON = localStorage.getItem("favorites-cities");
   const existingList = existingListJSON ? JSON.parse(existingListJSON) : [];
-  console.log(hasDuplicate(existingList, item));
   return hasDuplicate(existingList, item) ? true : false;
 };
 

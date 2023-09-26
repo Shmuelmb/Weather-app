@@ -1,26 +1,20 @@
 .five-days-forecasts {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   animation: up 2s cubic-bezier(0.39, 0, 0.38, 1) 0.7s;
 }
 
-.five-days-forecasts p {
-  font-size: 1.4em;
+.night-temp,
+.day-temp {
   width: 50px;
-  text-align: center;
-}
-.night-temp p,
-.day-temp p {
   font-size: 1.2rem;
 }
 
-.night-temp p {
+.night-temp {
   color: rgba(0, 0, 0, 0.493);
 }
-.days,
-.day-temp,
-.night-temp {
-  display: flex;
+
+.day {
+  width: 50px;
+  font-weight: 500;
+  text-align: left;
 }
