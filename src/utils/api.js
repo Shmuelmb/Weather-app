@@ -35,19 +35,6 @@ export const get5DailyForecasts = async (cityKey, setState) => {
   }
 };
 
-// export const getLocation = () =>
-//   navigator.geolocation.getCurrentPosition(async (position) => {
-//     try {
-//       const response = await fetch(
-//         `https://geocode.maps.co/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
-//       );
-//       const data = await response.json();
-//       return data.address.city;
-//     } catch (e) {
-//       console.log(e);
-//     }
-//   });
-
 export async function getCityFromGeolocation() {
   return new Promise(async (resolve, reject) => {
     try {
