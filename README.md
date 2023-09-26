@@ -4,6 +4,8 @@
 
 Weather App is a web application that provides users with up-to-date weather information for locations worldwide.
 
+[Try It!](https://weather-app-gcb2.onrender.com/)
+
 ## Stack
 
 - **HTML** ,**CSS**
