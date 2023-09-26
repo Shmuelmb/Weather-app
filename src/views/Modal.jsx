@@ -8,7 +8,7 @@ const Modal = ({ content }) => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 100);
+    }, 2000);
   }, []);
   return (
     !isLoading && (
