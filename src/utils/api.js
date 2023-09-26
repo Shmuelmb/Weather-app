@@ -5,7 +5,7 @@ export const BASE_URL = "https://dataservice.accuweather.com";
 export const getCurrentWeather = async (cityKey, setState = undefined) => {
   try {
     const req = await fetch(
-      `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${API_KEY}`
+      `${BASE_URL}/currentconditions/v1/${cityKey}?apikey=${API_KEY}`
     );
     const data = await req.json();
     setState({
