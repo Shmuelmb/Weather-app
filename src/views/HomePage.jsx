@@ -11,6 +11,7 @@ const HomePage = () => {
   useEffect(() => {
     get5DailyForecasts("215854", setForecast);
     getCurrentWeather("215854", setCurrentWeather);
+    // reload default city "Tel Aviv"
   }, []);
 
   return (

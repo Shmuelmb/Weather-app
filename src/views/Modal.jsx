@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import "./views.css";
+
 const Modal = ({ content }) => {
   const [openModal, setOpenModal] = useState(true);
   const [isLoading, setIsLoading] = useState(true);

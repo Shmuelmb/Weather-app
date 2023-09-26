@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./SearchBar.css";
 import { get5DailyForecasts, getCurrentWeather } from "../../utils/api";
 import SearchField from "./SearchField/SearchField";
 import ListCities from "./ListCities/ListCities";
 import { useAutocomplete } from "../../hooks/useAutocomplete";
 import Modal from "../../views/Modal";
+import "./SearchBar.css";
+
 const SearchBar = ({
   setForecast,
   setCityName,

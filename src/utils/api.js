@@ -2,19 +2,20 @@ import { fahrenheitToCelsius, getDayOfWeek } from "./utilities";
 
 export const API_KEY = import.meta.env.VITE_API_KEY;
 export const BASE_URL = "https://dataservice.accuweather.com";
-
-// export const autoComplete = async (query, setState) => {
-//   try {
-//     const req = await fetch(
-//       `${BASE_URL}/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${query}`
-//     );
-//     const data = await req.json();
-//     setState(data);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
-
+export const getCurrentWeather = async (cityKey, setState = undefined) => {
+  try {
+    const req = await fetch(
+      `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${API_KEY}`
+    );
+    const data = await req.json();
+    setState({
+      Temperature: data[0].Temperature.Metric.Value,
+      WeatherText: data[0].WeatherText,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
 export const get5DailyForecasts = async (cityKey, setState) => {
   try {
     const req = await fetch(
@@ -29,21 +30,6 @@ export const get5DailyForecasts = async (cityKey, setState) => {
       };
     });
     setState(fiveDailyForecasts);
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const getCurrentWeather = async (cityKey, setState = undefined) => {
-  try {
-    const req = await fetch(
-      `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${API_KEY}`
-    );
-    const data = await req.json();
-    setState({
-      Temperature: data[0].Temperature.Metric.Value,
-      WeatherText: data[0].WeatherText,
-    });
   } catch (err) {
     console.log(err);
   }

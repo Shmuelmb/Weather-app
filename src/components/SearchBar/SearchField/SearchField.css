@@ -1,6 +1,5 @@
 #search {
   display: grid;
-
   background: #f3f3f3;
 }
 
@@ -21,120 +20,6 @@
   fill: none;
   stroke: currentColor;
 }
-
-/* .spark {
-  fill: currentColor;
-  stroke: none;
-  r: 15;
-} */
-
-/* .spark:nth-child(1) {
-  animation: spark-radius 2.03s 1s both, spark-one-motion 2s 1s both;
-}
-
-@keyframes spark-radius {
-  0% {
-    r: 0;
-    animation-timing-function: cubic-bezier(0, 0.3, 0, 1.57);
-  }
-  30% {
-    r: 15;
-    animation-timing-function: cubic-bezier(1, -0.39, 0.68, 1.04);
-  }
-  95% {
-    r: 8;
-  }
-  99% {
-    r: 10;
-  }
-  99.99% {
-    r: 7;
-  }
-  100% {
-    r: 0;
-  }
-}
-
-@keyframes spark-one-motion {
-  0% {
-    transform: translate(-20%, 50%);
-    animation-timing-function: cubic-bezier(0.63, 0.88, 0, 1.25);
-  }
-  20% {
-    transform: rotate(-0deg) translate(0%, -50%);
-    animation-timing-function: ease-in;
-  }
-  80% {
-    transform: rotate(-230deg) translateX(-20%) rotate(-100deg) translateX(15%);
-    animation-timing-function: linear;
-  }
-  100% {
-    transform: rotate(-360deg) translate(30px, 100%);
-    animation-timing-function: cubic-bezier(0.64, 0.66, 0, 0.51);
-  }
-}
-
-.spark:nth-child(2) {
-  animation: spark-radius 2.03s 1s both, spark-two-motion 2.03s 1s both;
-}
-
-@keyframes spark-two-motion {
-  0% {
-    transform: translate(120%, 50%) rotate(-70deg) translateY(0%);
-    animation-timing-function: cubic-bezier(0.36, 0.18, 0.94, 0.55);
-  }
-  20% {
-    transform: translate(90%, -80%) rotate(60deg) translateY(-80%);
-    animation-timing-function: cubic-bezier(0.16, 0.77, 1, 0.4);
-  }
-  40% {
-    transform: translate(110%, -50%) rotate(-30deg) translateY(-120%);
-    animation-timing-function: linear;
-  }
-  70% {
-    transform: translate(100%, -50%) rotate(120deg) translateY(-100%);
-    animation-timing-function: linear;
-  }
-  80% {
-    transform: translate(95%, 50%) rotate(80deg) translateY(-150%);
-    animation-timing-function: cubic-bezier(0.64, 0.66, 0, 0.51);
-  }
-  100% {
-    transform: translate(100%, 50%) rotate(120deg) translateY(0%);
-  }
-}
-
-.spark:nth-child(3) {
-  animation: spark-radius 2.05s 1s both, spark-three-motion 2.03s 1s both;
-}
-
-@keyframes spark-three-motion {
-  0% {
-    transform: translate(50%, 100%) rotate(-40deg) translateX(0%);
-    animation-timing-function: cubic-bezier(0.62, 0.56, 1, 0.54);
-  }
-  30% {
-    transform: translate(40%, 70%) rotate(20deg) translateX(20%);
-    animation-timing-function: cubic-bezier(0, 0.21, 0.88, 0.46);
-  }
-  40% {
-    transform: translate(65%, 20%) rotate(-50deg) translateX(15%);
-    animation-timing-function: cubic-bezier(0, 0.24, 1, 0.62);
-  }
-  60% {
-    transform: translate(60%, -40%) rotate(-50deg) translateX(20%);
-    animation-timing-function: cubic-bezier(0, 0.24, 1, 0.62);
-  }
-  70% {
-    transform: translate(70%, -0%) rotate(-180deg) translateX(20%);
-    animation-timing-function: cubic-bezier(0.15, 0.48, 0.76, 0.26);
-  }
-  100% {
-    transform: translate(70%, -0%) rotate(-360deg) translateX(0%) rotate(180deg)
-      translateX(20%);
-  }
-} */
-
 .burst {
   stroke-width: 3;
 }

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./ForecastCard.css";
 import FiveDaysForecasts from "./FiveDaysForecasts/FiveDaysForecasts";
-import { checkIsSave } from "../../utils/utilities";
-import { addItemToLocalStorage } from "../../utils/utilities";
+import { checkIsSave, addItemToLocalStorage } from "../../utils/utilities";
+import "./ForecastCard.css";
 
 const ForecastCard = ({ forecast, cityName, query, currentWeather }) => {
   const [isSave, setIsSave] = useState(false);
